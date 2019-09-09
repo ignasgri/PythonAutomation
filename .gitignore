@@ -1,0 +1,2 @@
+       #creates folder in new location
+        os.mkdir(path + folderName)

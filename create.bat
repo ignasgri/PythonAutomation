@@ -1,3 +1,3 @@
-echo @echo off
+@echo off
 
 python mkdir.py %*
