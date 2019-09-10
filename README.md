@@ -6,7 +6,7 @@
 - [x] Create variable folder name
 - [x] Create path so projects location
 - [x] Create function to redirect to set location
-- [ ] Make new folder in set location
+- [x] Make new folder in set location
 - [ ] Redirect to new created folder
 - [ ] Call Web browser
 - [ ] Navigate to GitHub account and login
@@ -34,6 +34,14 @@ def makedirectory():
 if __name__ == '__main__':
     makedirectory()
 ```
+5. Create project folder in set location
+```
+os.mkdir(path + folderName)
+```
+<!-- 5. Create project folder in set location
+```
+
+``` -->
 <!-- 5. Create project folder in set location
 ```
 
