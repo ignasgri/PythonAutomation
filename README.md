@@ -1,13 +1,15 @@
 # "PythonAutomation" 
 #### Script to help using only one line to create new project directory and necessary files to quick and easy start new project. Additionally to that it will automatically login to GitHub account and will initial new repository, submit changes and automatically push files to new created repo.
 
+### In my case to start new Django project i will use windows terminal and default location so all my created files will go to this directory. 
+``` 
+C:\Users\Ignas>
+```
 > To do list:
 - [x] Create CMD file to call Python script
 - [x] Create variable folder name
-- [x] Create path so projects location
-- [x] Create function to redirect to set location
 - [x] Make new folder in set location
-- [ ] Redirect to new created folder
+- [x] Redirect to new created folder
 - [ ] Call Web browser
 - [ ] Navigate to GitHub account and login
 - [ ] Create new Repository
@@ -15,34 +17,29 @@
 
 >Execution 
 1. Call Python script from (CMD) Command Prompt
+> create.bat
 ```
 @echo off
 python mkdir.py %*
 ```
 2. Create variable file name using (CMD) Command Prompt
+> mkdir.py
 ```
 folderName = str(sys.argv[1])
 ```
-3. Set project location
+3. Create project folder in set location
+> mkdir.py
 ```
-path = (r'C:\\Users\Ignas\Documents\\')
+os.mkdir(("C:/Users/Ignas/Documents/DjangoProjects/") + folderName)
 ```
-4. Function to point to your set location (point no.3)
+4. Set path to your project folder 
+> create.bat
 ```
-def makedirectory():
-        os.chdir(path) 
-if __name__ == '__main__':
-    makedirectory()
-```
-5. Create project folder in set location
-```
-os.mkdir(path + folderName)
+@cd Documents/DjangoProjects
+@cd /d %*
 ```
 <!-- 5. Create project folder in set location
+> mkdir.py
 ```
-
-``` -->
-<!-- 5. Create project folder in set location
-```
-
+os.mkdir(("C:/Users/Ignas/Documents/DjangoProjects/") + folderName)
 ``` -->
