@@ -11,7 +11,7 @@ C:\Users\Ignas>
 - [x] Make new folder in set location
 - [x] Redirect to new created folder
 - [x] Call Web browser
-- [ ] Navigate to GitHub account and login
+- [x] Navigate to GitHub account and login
 - [ ] Create new Repository
 - [ ] Push Files to Git
 
@@ -84,4 +84,8 @@ submit_button = driver.find_elements_by_xpath()
 >mkdir.py
 ```
 submit_button = driver.find_elements_by_xpath('//*[@id="login"]/form/div[3]/input[7]')[0]
+```
+12. To submit all your credentials use command ***click()***
+```
+submit_button.click()
 ```

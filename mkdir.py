@@ -22,3 +22,4 @@ login.send_keys("your github password")
 
 
 submit_button = driver.find_elements_by_xpath('//*[@id="login"]/form/div[3]/input[7]')[0]
+submit_button.click()
