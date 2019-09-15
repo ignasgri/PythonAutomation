@@ -15,3 +15,6 @@ if __name__ == '__main__':
 # call chrome web browser
 driver = webdriver.Chrome()
 
+login = driver.find_element_by_id('login_field')
+login.send_keys("your github login")
+# 

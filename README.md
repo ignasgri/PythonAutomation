@@ -5,7 +5,7 @@
 ``` 
 C:\Users\Ignas>
 ```
-> To do list:
+## To do list:
 - [x] Create CMD file to call Python script
 - [x] Create variable folder name
 - [x] Make new folder in set location
@@ -56,4 +56,15 @@ from selenium import webdriver
 > mkdir.py
 ```
 driver = webdriver.Chrome()
+```
+7. To fill the login/password information you need to use ***chrome developer tools*** to find login/password field. Click on the login field right mouse button and select ***inspect***. Copy  id=" ***loginfield*** " to your code.
+to target id element use command ***find_element_by_id()***
+> mkdir.py
+```
+login = driver.find_element_by_id('login_field')
+```
+8. To send your login information to the browser use command ***send.keys()***
+>mkdir.py
+```
+login.send_keys("your github login")
 ```
