@@ -17,4 +17,5 @@ driver = webdriver.Chrome()
 
 login = driver.find_element_by_id('login_field')
 login.send_keys("your github login")
-# 
+login = driver.find_element_by_id('password')
+login.send_keys("your github password")

@@ -68,3 +68,9 @@ login = driver.find_element_by_id('login_field')
 ```
 login.send_keys("your github login")
 ```
+9. Repeat process for password as shown in point 7 and 8 
+> mkdir.py
+```
+login = driver.find_element_by_id('password')
+login.send_keys("your github password")
+```
