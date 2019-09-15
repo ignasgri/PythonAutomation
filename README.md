@@ -74,3 +74,14 @@ login.send_keys("your github login")
 login = driver.find_element_by_id('password')
 login.send_keys("your github password")
 ```
+10. To locate ***sign in*** button you need use ***find_elements_by_xpath()***
+>mkdir.py
+```
+submit_button = driver.find_elements_by_xpath()
+```
+
+11. To get xPath you need to click right mouse button on ***sign in*** button and using ***chrome developer tools*** copy and paste xPath to your code
+>mkdir.py
+```
+submit_button = driver.find_elements_by_xpath('//*[@id="login"]/form/div[3]/input[7]')[0]
+```
