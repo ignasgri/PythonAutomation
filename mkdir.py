@@ -20,6 +20,8 @@ login.send_keys("your github login")
 login = driver.find_element_by_id('password')
 login.send_keys("your github password")
 
-
 submit_button = driver.find_elements_by_xpath('//*[@id="login"]/form/div[3]/input[7]')[0]
 submit_button.click()
+
+repo_name = driver.find_element_by_id('repository_name')
+repo_name.send_keys(folderName)

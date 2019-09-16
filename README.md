@@ -1,7 +1,7 @@
 # "PythonAutomation" 
-#### Script to help using only one line to create new project directory and necessary files to quick and easy start new project. Additionally to that it will automatically login to GitHub account and will initial new repository, submit changes and automatically push files to new created repo.
+### Script to help using only one line to create new project directory and necessary files to quick and easy start new project. Additionally to that it will automatically login to GitHub account and will initial new repository, submit changes and automatically push files to new created repo.
 
-### In my case to start new Django project i will use windows terminal and default location so all my created files will go to this directory. 
+#### In my case to start new Django project i will use windows terminal and default location so all my created files will go to this directory. 
 ``` 
 C:\Users\Ignas>
 ```
@@ -12,10 +12,10 @@ C:\Users\Ignas>
 - [x] Redirect to new created folder
 - [x] Call Web browser
 - [x] Navigate to GitHub account and login
-- [ ] Create new Repository
+- [x] Create new Repository
 - [ ] Push Files to Git
 
->Execution 
+## Execution 
 1. Call Python script from (CMD) Command Prompt
 > create.bat
 ```
@@ -57,8 +57,8 @@ from selenium import webdriver
 ```
 driver = webdriver.Chrome()
 ```
-7. To fill the login/password information you need to use ***chrome developer tools*** to find login/password field. Click on the login field right mouse button and select ***inspect***. Copy  id=" ***loginfield*** " to your code.
-to target id element use command ***find_element_by_id()***
+7. To fill the login/password information you need to use ***chrome developer tools*** to find login/password field. Click on the login field right mouse button and select ***inspect*** *[reference image](https://github.com/ignasgri/PythonAutomation/blob/master/images/loginInspect.jpg)*. Copy  id=" ***loginfield*** " *[reference image](https://github.com/ignasgri/PythonAutomation/blob/master/images/loginField.jpg)* to your code. To target id element use command ***find_element_by_id()***
+
 > mkdir.py
 ```
 login = driver.find_element_by_id('login_field')
@@ -68,7 +68,7 @@ login = driver.find_element_by_id('login_field')
 ```
 login.send_keys("your github login")
 ```
-9. Repeat process for password as shown in point 7 and 8 
+9. Repeat process for password as shown in *point no. 7 and 8* 
 > mkdir.py
 ```
 login = driver.find_element_by_id('password')
@@ -81,11 +81,26 @@ submit_button = driver.find_elements_by_xpath()
 ```
 
 11. To get xPath you need to click right mouse button on ***sign in*** button and using ***chrome developer tools*** copy and paste xPath to your code
+*[reference image](https://github.com/ignasgri/PythonAutomation/blob/master/images/xPath.jpg)*
+
 >mkdir.py
 ```
 submit_button = driver.find_elements_by_xpath('//*[@id="login"]/form/div[3]/input[7]')[0]
 ```
 12. To submit all your credentials use command ***click()***
+> mkdir.py
 ```
 submit_button.click()
+```
+13. After you login to GitHub you need to create new repository. Repeat *point no. 11 and 12* just this time you need to get xPath for ***New*** button
+```
+new_repo_button = driver.find_elements_by_xpath("/html/body/div[4]/div/aside[1]/div[2]/div/div/h2/a")[0]
+
+new_repo_button.click()
+```
+14. Automatically input repo name you need to use ***folderName***. So your project name will update your repository name. To get input field information use  ***find_element_by_id*** as shown in *point no.7* and to send information to fill the filed use ***send_keys()*** command *[reference image](https://github.com/ignasgri/PythonAutomation/blob/master/images/repoName.jpg)*
+```
+repo_name = driver.find_element_by_id('repository_name')
+
+repo_name.send_keys(folderName)
 ```
