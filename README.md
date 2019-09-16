@@ -104,3 +104,16 @@ repo_name = driver.find_element_by_id('repository_name')
 
 repo_name.send_keys(folderName)
 ```
+15. Repository name to validate by GitHub takes less then a second so we need to delay process between the repository name was automatically filled in and clicking the button ***Create repository*** [reference image](https://github.com/ignasgri/PythonAutomation/blob/master/images/createRepository.jpg). To delay process we need to import *sleep* library. This need to be placed in top of your code.
+```
+from time import sleep
+```
+16. Firstly you need to  add sleep function ***sleep(1)*** and specify for how long we need to sleep (*in this case is one second*) this need to be placed above ***create_repo_button*** as shown in code sample below. 
+Secondly to create repository repeat process as shown in *point no. 11*
+
+```
+sleep (1)
+
+create_repo_button = driver.find_elements_by_xpath('//*[@id="new_repository"]/div[3]/button')[0]
+create_repo_button.click()
+```

@@ -1,5 +1,6 @@
 import os
 import sys
+from time import sleep
 import selenium
 from selenium import webdriver
 #create variable file name using Cmd terminal
@@ -25,3 +26,8 @@ submit_button.click()
 
 repo_name = driver.find_element_by_id('repository_name')
 repo_name.send_keys(folderName)
+
+sleep(1)
+
+create_repo_button = driver.find_elements_by_xpath('//*[@id="new_repository"]/div[3]/button')[0]
+create_repo_button.click()
