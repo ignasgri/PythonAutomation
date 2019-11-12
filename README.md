@@ -13,7 +13,7 @@ C:\Users\Ignas>
 - [x] Call Web browser
 - [x] Navigate to GitHub account and login
 - [x] Create new Repository
-- [ ] Push Files to Git
+- [x] Push Files to Git
 
 ## Execution 
 1. Call Python script from (CMD) Command Prompt
@@ -116,4 +116,17 @@ sleep (1)
 
 create_repo_button = driver.find_elements_by_xpath('//*[@id="new_repository"]/div[3]/button')[0]
 create_repo_button.click()
+```
+
+17. To execute command in Command Line you need to pass some information to 
+```
+print(os.getcwd())
+os.system('git init')
+sleep(2)
+os.system('git add .')
+sleep(2)
+os.system('git commit -m "new project first commit"')
+os.system('git remote add origin https://github.com/ignasgri/'+ folderName + '.git')
+sleep(2)
+os.system('git push -u origin master')
 ```
